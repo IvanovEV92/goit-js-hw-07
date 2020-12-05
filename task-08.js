@@ -21,9 +21,10 @@ function createBoxes(amount) {
 }
 function destroyBoxes() {
 	boxRef.innerHTML = '';
+	inputRef.value = '';
 	itemWidth = 20;
 	itemHeight = 20;
-	inputRef.value = 0;
+	
 }
 btnRenderRef.addEventListener('click', () => createBoxes(amount));
 
