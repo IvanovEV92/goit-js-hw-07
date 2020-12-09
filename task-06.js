@@ -1,7 +1,11 @@
 const getInputValue = document.getElementById('validation-input');
 
-getInputValue.addEventListener('input', (event) =>
-	event.target.value.length < getInputValue.getAttribute('data-length')
-		? getInputValue.classList.add('invalid')
-		: getInputValue.classList.replace('invalid', 'valid')
-);
+getInputValue.addEventListener('blur', () => {
+	if (event.target.value.length !== +getInputValue.getAttribute('data-length')) {
+		getInputValue.classList.add('invalid');
+		getInputValue.classList.remove('valid');
+	} else {
+		getInputValue.classList.add('valid');
+		getInputValue.classList.remove('invalid');
+	}
+});

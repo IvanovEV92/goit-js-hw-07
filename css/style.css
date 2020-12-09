@@ -7,6 +7,7 @@ img {
 #gallery {
 	list-style: none;
 	display: flex;
+	width: ;
 	flex-wrap: wrap;
 }
 

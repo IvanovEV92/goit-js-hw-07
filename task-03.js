@@ -15,12 +15,13 @@ const images = [
 
 const elementList = document.getElementById('gallery');
 
-function getElement(arr) {
-	arr.forEach(({ url, alt }) => {
-		const elementString = `<li><img src="${url}" alt="${alt}"></li>`;
-		elementList.insertAdjacentHTML('afterbegin', elementString);
-	});
-	return elementList;
+function getElement(arr, parent) {
+	let itemElementList = arr.reduce((acc, { url, alt }) => {
+		const element = `<li><img src="${url}" alt="${alt}"></li>`;
+		acc += element;
+		return acc;
+	}, '');
+	return parent.insertAdjacentHTML('afterbegin', itemElementList);
 }
 
-console.log(getElement(images));
+getElement(images, elementList);

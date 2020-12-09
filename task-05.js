@@ -3,4 +3,4 @@ const nameLabelRef = document.querySelector('#name-output');
 console.dir(getInputValue);
 console.dir(nameLabelRef);
 
-getInputValue.addEventListener('input', () => (nameLabelRef.textContent = event.target.value || 'незнакомец'));
+getInputValue.addEventListener('input', () => (nameLabelRef.textContent = event.target.value ? event.target.value : 'незнакомец'));

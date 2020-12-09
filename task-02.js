@@ -1,12 +1,10 @@
 const elementList = document.getElementById('ingredients');
-console.dir(elementList);
-
 const ingredients = ['Картошка', 'Грибы', 'Чеснок', 'Помидоры', 'Зелень', 'Приправы'];
+const itemElementList = ingredients.reduce((acc, ingredient) => {
+	const newEl = document.createElement('li');
+	newEl.textContent = ingredient;
+	acc.push(newEl);
+	return acc;
+}, []);
 
-ingredients.forEach((ingredient) => {
-	let itemElementList = document.createElement('li');
-	itemElementList.textContent = ingredient;
-	elementList.append(itemElementList);
-	console.log(itemElementList);
-});
-console.log(elementList);
+elementList.append(...itemElementList);
